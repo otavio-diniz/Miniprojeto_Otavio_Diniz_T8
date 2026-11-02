@@ -11,16 +11,7 @@
 
 O objetivo deste mini-projeto é investigar a estrutura e a qualidade de uma base de dados de varejo, aplicar procedimentos justificados de tratamento e utilizar técnicas de análise de dados com Python e a biblioteca Pandas para interpretar os resultados obtidos.
 
-O projeto está organizado em seis Sprints, conforme o enunciado institucional:
-
-1. Leitura e diagnóstico;
-2. Limpeza e padronização;
-3. Funções e organização;
-4. Análise dos dados;
-5. Exportação e comunicação;
-6. Revisão e entrega.
-
-As cinco primeiras Sprints compõem o desenvolvimento técnico do notebook. A sexta corresponde à revisão final, à organização dos arquivos e à submissão do trabalho.
+O processamento segue etapas técnicas reproduzíveis: importação, diagnóstico, tratamento justificado, análise exploratória, exportação e validação dos dados.
 
 O projeto também busca demonstrar a importância de compreender o significado dos dados antes de realizar alterações, evitando excluir registros ou atribuir interpretações sem evidências suficientes.
 
@@ -32,13 +23,13 @@ Ao final do processamento, é gerado o arquivo tratado `varejo_limpo.csv`.
 - **Linguagem e bibliotecas:** Python, Pandas, `google.colab.files` para receber o arquivo de entrada e módulos da biblioteca padrão `pathlib` e `os` para lidar com caminhos e validar a exportação.
 - **Dependências:** uma sessão Python com Pandas disponível e o CSV original `Base Varejo.csv` obtido legitimamente na fonte indicada. O processamento não exige banco de dados, credenciais de serviço nem módulos Python próprios adicionais.
 
-Arquivos previstos para a entrega acadêmica:
+Arquivos do projeto:
 
-- `Miniprojeto_Otavio_Diniz_T8.ipynb`: roteiro executável, checkpoints, resultados e interpretações;
+- `Miniprojeto_Otavio_Diniz_T8.ipynb`: notebook executável com leitura, limpeza, análise e interpretação;
 - `README.md`: apresentação, metodologia, reprodução e limitações;
-- `varejo_limpo.csv`: saída tratada da Sprint 5, **somente para distribuição pública se os direitos de redistribuição forem comprovados**.
+- `varejo_limpo.csv`: base tratada publicada neste repositório, reproduzível pelo notebook.
 
-O arquivo de entrada `Base Varejo.csv` é obtido separadamente na origem citada; não é criado pelo notebook. O tratamento pode ser reproduzido por sua execução, preservando as restrições de uso da fonte.
+O arquivo de entrada `Base Varejo.csv` é obtido separadamente na origem citada; não é criado pelo notebook. O tratamento pode ser reproduzido executando novamente o notebook com o CSV de entrada.
 
 ## Fonte dos dados
 
@@ -48,9 +39,8 @@ O arquivo de entrada `Base Varejo.csv` é obtido separadamente na origem citada;
 **Versão:** 1 — 03/04/2023  
 **Arquivo utilizado:** `Base Varejo.csv`
 
-Fonte indicada no enunciado: [Base Varejo — Kaggle](https://www.kaggle.com/datasets/namespaiva/base-varejo/data).
+Fonte dos dados: [Base Varejo — Kaggle](https://www.kaggle.com/datasets/namespaiva/base-varejo/data).
 
-**Direitos de terceiros:** os metadados de atribuição e versão acima são reproduzidos da documentação acadêmica utilizada, mas a licença de redistribuição pública do dataset não foi confirmada nesta revisão. A disponibilidade para download no Kaggle não constitui, por si só, permissão para republicar a base original ou o CSV tratado. Sem essa comprovação, o CSV completo permanece fora da distribuição pública, mesmo que tenha sido gerado e validado localmente.
 
 ## Estrutura dos dados
 
@@ -82,7 +72,7 @@ Após a limpeza, a estrutura final passou a possuir **830.000 registros e 10 col
 
 ## Como executar
 
-O projeto foi executado e validado no **Google Colab** com Python e Pandas. Recomenda-se esse mesmo ambiente; não foi certificada a equivalência de execução em todos os sistemas operacionais ou versões locais de Python. Não há arquivo `requirements.txt` ou versão de Pandas fixada no projeto.
+O projeto foi desenvolvido no **Google Colab**, com Python e Pandas. O código foi revisado após a devolutiva da instrutora; os resultados persistidos do notebook devem ser regenerados na próxima execução integral. Recomenda-se esse mesmo ambiente; não foi certificada a equivalência de execução em todos os sistemas operacionais ou versões locais de Python. Não há arquivo `requirements.txt` ou versão de Pandas fixada no projeto.
 
 **Reprodução em uma sessão limpa do Google Colab:**
 
@@ -90,18 +80,18 @@ O projeto foi executado e validado no **Google Colab** com Python e Pandas. Reco
 2. Obter o arquivo `Base Varejo.csv` na fonte indicada no Kaggle.
 3. Executar a primeira célula responsável pelo upload do arquivo.
 4. Quando solicitado, selecionar `Base Varejo.csv` no computador.
-5. Executar as células do notebook na ordem em que aparecem, desde a Sprint 0 até a Sprint 5.
+5. Executar as células do notebook na ordem em que aparecem, desde a preparação até a exportação.
 6. Acompanhar os resultados de diagnóstico, limpeza, validação e análise apresentados após cada checkpoint.
-7. Na Sprint 5, executar a célula de exportação:
+7. Na etapa final, executar a célula de exportação:
 
 `df_funcao.to_csv("varejo_limpo.csv", index=False)`
 
 8. Após a execução, localizar `varejo_limpo.csv` na área de arquivos da sessão do Google Colab.
 9. O notebook realiza uma nova leitura do arquivo exportado para confirmar sua integridade.
 
-**Critério de sucesso:** nenhuma célula de código deve apresentar erro, o CSV deve ser criado e a seção de validação da Sprint 5 deve indicar correspondência de registros, dimensões, colunas e conteúdo entre a base tratada e o CSV relido. Para problemas com a entrada, conferir nome `Base Varejo.csv`, separador `;` e seleção do arquivo durante o upload; a sessão Colab é temporária, portanto o arquivo de saída precisa ser preservado fora dela conforme a necessidade de uso.
+**Critério de sucesso:** nenhuma célula de código deve apresentar erro, o CSV deve ser criado e a seção de validação do processo deve indicar correspondência de registros, dimensões, colunas e conteúdo entre a base tratada e o CSV relido. Para problemas com a entrada, conferir nome `Base Varejo.csv`, separador `;` e seleção do arquivo durante o upload; a sessão Colab é temporária, portanto o arquivo de saída precisa ser preservado fora dela conforme a necessidade de uso.
 
-Na validação realizada no próprio notebook, foram obtidos:
+Na execução anterior à revisão textual, os resultados registrados no notebook foram:
 
 - base original: **830.000 linhas × 14 colunas**;
 - base tratada: **830.000 linhas × 10 colunas**;
@@ -131,6 +121,10 @@ Não foram identificados:
 - textos vazios;
 - campos formados apenas por espaços;
 - espaços indevidos no início ou no final dos valores.
+
+### Normalização textual
+
+Na revisão posterior ao feedback da instrutora, foram identificadas **7.320 ocorrências** de `REFRIGERANTE LIMaO` em `PR_NOME`. A normalização com `str.strip().str.upper()` passa a registrar essas ocorrências como `REFRIGERANTE LIMAO`, preservando seus identificadores e registros.
 
 ### Marcadores `#N/D`
 
@@ -205,6 +199,7 @@ O notebook realiza:
 - análise da consistência dos identificadores;
 - investigação do marcador `#N/D`;
 - remoção das quatro colunas vazias;
+- normalização dos nomes e categorias com `str.strip().str.upper()`;
 - padronização dos campos não informados;
 - criação da função `tratar_dados()`;
 - validação da base resultante;
@@ -212,7 +207,7 @@ O notebook realiza:
 - agrupamentos;
 - cálculo de estatísticas.
 
-A função de tratamento cria uma cópia dos dados, remove apenas as quatro colunas completamente vazias e padroniza os dois campos de produto sem informação.
+A função de tratamento cria uma cópia dos dados, remove as quatro colunas completamente vazias, normaliza `PR_CAT` e `PR_NOME` com `str.strip().str.upper()` e substitui os marcadores `#N/D` por valores descritivos de informação indisponível.
 
 ### 3. Exportação
 
@@ -228,7 +223,7 @@ O fluxo completo pode ser representado por:
 
 ## Leitura, transformação e gravação dos dados
 
-A leitura da base original ocorre na Sprint 1, utilizando `pd.read_csv()`. A transformação é investigada e justificada na Sprint 2 e organizada na função `tratar_dados()` na Sprint 3. Na Sprint 5, a base tratada é gravada como `varejo_limpo.csv`, utilizando `to_csv(index=False)`, e relida para validação. A remoção das quatro colunas completamente vazias reduziu a estrutura de 14 para 10 colunas sem excluir registros. A padronização dos marcadores `#N/D` também tornou explícita a ausência de informações do produto 107, preservando a rastreabilidade dos dados.
+A leitura da base original ocorre na leitura, utilizando `pd.read_csv()`. A transformação é investigada e justificada na investigação e organizada na função `tratar_dados()` na estruturação da função. Na etapa final, a base tratada é gravada como `varejo_limpo.csv`, utilizando `to_csv(index=False)`, e relida para validação. A remoção das quatro colunas completamente vazias reduziu a estrutura de 14 para 10 colunas sem excluir registros. A padronização dos marcadores `#N/D` também tornou explícita a ausência de informações do produto 107, preservando a rastreabilidade dos dados.
 
 ## Principais conclusões
 
@@ -283,13 +278,11 @@ Embora tenha ocorrido crescimento nos totais de 2019 a 2021 e redução em 2022,
 
 ## Recomendação
 
-Recomenda-se investigar principalmente as **96.553 linhas completamente repetidas** e os **3.650 registros cujo produto permanece com nome e categoria não informados**.
+**Proposta de ação comercial para testar:** a categoria `ALIMENTOS` concentra **434.767 registros**. Recomenda-se identificar pares de produtos alimentícios presentes em **compras distintas** (identificadas por `CO_ID`) e avaliar um teste controlado de exposição conjunta ou sugestão de itens complementares. O indicador de acompanhamento proposto é a **proporção de compras distintas que contêm ambos os produtos**, comparando períodos com cobertura equivalente.
 
-Para isso, seria importante obter uma fonte complementar, como um cadastro oficial de produtos ou uma informação que permita diferenciar itens dentro de uma mesma compra.
+É uma hipótese de ação, não uma previsão de resultado. A contagem de registros não representa necessariamente unidades vendidas; como a base não fornece preço, quantidade ou receita, não se pode estimar efeito em faturamento, margem ou ticket médio. A ação deve ser validada com dados novos e contexto operacional.
 
-Essa verificação permitiria determinar se as repetições representam registros legítimos ou duplicações indevidas e, eventualmente, recuperar a identificação do produto atualmente registrado como não informado.
-
-Também se recomenda conferir a abrangência e a qualidade dos registros do final de 2022 antes de interpretar a diminuição das compras como uma tendência do varejo.
+**Recomendação de qualidade:** investigar as **96.553 linhas completamente repetidas** e os **3.650 registros** do produto de código `107` sem nome/categoria conhecidos. Um cadastro confiável e informações sobre quantidade por compra poderiam esclarecer esses casos sem eliminar ou inventar registros. Verificar também a cobertura temporal do fim de 2022 antes de interpretar a redução nas compras como tendência de mercado.
 
 ## Limitação
 
@@ -314,6 +307,4 @@ Os campos `CL_EC` e `CL_FHL` não possuem dicionário semântico validado; não 
 
 **Projeto acadêmico:** Otávio Diniz — SC TEC, Análise de Dados com Python, Turma T8, Módulo 1, Semana 7.
 
-**Fonte de dados:** [Base Varejo no Kaggle](https://www.kaggle.com/datasets/namespaiva/base-varejo/data), publicação atribuída na documentação do projeto a João Pedro Paiva Cardoso. As condições de redistribuição pública da base original e do CSV resultante continuam sujeitas à verificação da licença aplicável.
-
-**Licenciamento do repositório:** não há, neste documento, concessão de licença sobre dados de terceiros. Não se deve interpretar a exposição do código e da documentação como autorização para republicar a base de dados.
+**Fonte de dados:** [Base Varejo no Kaggle](https://www.kaggle.com/datasets/namespaiva/base-varejo/data), publicação atribuída na documentação do projeto a João Pedro Paiva Cardoso.
