@@ -278,9 +278,19 @@ Embora tenha ocorrido crescimento nos totais de 2019 a 2021 e redução em 2022,
 
 ## Recomendação
 
-**Proposta de ação comercial para testar:** a categoria `ALIMENTOS` concentra **434.767 registros**. Recomenda-se identificar pares de produtos alimentícios presentes em **compras distintas** (identificadas por `CO_ID`) e avaliar um teste controlado de exposição conjunta ou sugestão de itens complementares. O indicador de acompanhamento proposto é a **proporção de compras distintas que contêm ambos os produtos**, comparando períodos com cobertura equivalente.
+**Oportunidade comercial — Recomendações complementares baseadas em afinidade de compras**
 
-É uma hipótese de ação, não uma previsão de resultado. A contagem de registros não representa necessariamente unidades vendidas; como a base não fornece preço, quantidade ou receita, não se pode estimar efeito em faturamento, margem ou ticket médio. A ação deve ser validada com dados novos e contexto operacional.
+A análise identificou **18.471 compras distintas**, das quais **3.322 continham o produto `PR_ID 51 — PAPINHA INFANTIL`**. Essa presença recorrente sugere uma oportunidade para investigar recomendações de produtos complementares no momento da compra.
+
+**Ação proposta:** identificar os produtos que aparecem com maior frequência nas mesmas compras que contêm PAPINHA INFANTIL. A análise deve utilizar `CO_ID` para contar compras distintas e `PR_ID` para distinguir produtos, comparando a frequência de coocorrência com a presença geral de cada item. Antes de selecionar um complemento, é necessário confirmar suporte amostral, adequação comercial e disponibilidade.
+
+**Teste proposto:** com a hipótese validada em dados atuais, realizar um **piloto controlado de quatro semanas**, comparando compras elegíveis que recebem a recomendação com um grupo controle que não recebe. Os dois grupos devem seguir o mesmo critério de elegibilidade.
+
+**Indicador principal:** proporção de compras distintas elegíveis que também incluem o produto complementar. Como critério inicial do experimento, propõe-se uma **meta hipotética de crescimento relativo de 10% em comparação ao grupo controle**, condicionada à suficiência da amostra e à análise estatística. Esse percentual não representa um resultado observado na base.
+
+**Critério de decisão:** considerar a ampliação gradual da estratégia somente se o piloto mostrar aumento consistente da inclusão de produtos complementares, sem prejuízo à experiência de compra ou à disponibilidade dos itens. Caso contrário, reavaliar a oferta e o público.
+
+**Limitações:** a base reúne dados históricos de 2019 a 2022 e não contém preço, quantidade física, receita ou margem. Assim, a análise não permite afirmar aumento de faturamento, lucro ou causalidade. O piloto é uma proposta, não uma ação já executada.
 
 **Recomendação de qualidade:** investigar as **96.553 linhas completamente repetidas** e os **3.650 registros** do produto de código `107` sem nome/categoria conhecidos. Um cadastro confiável e informações sobre quantidade por compra poderiam esclarecer esses casos sem eliminar ou inventar registros. Verificar também a cobertura temporal do fim de 2022 antes de interpretar a redução nas compras como tendência de mercado.
 
