@@ -72,7 +72,7 @@ Após a limpeza, a estrutura final passou a possuir **830.000 registros e 10 col
 
 ## Como executar
 
-O projeto foi desenvolvido no **Google Colab**, com Python e Pandas. O código foi revisado após a devolutiva da instrutora; os resultados persistidos do notebook devem ser regenerados na próxima execução integral. Recomenda-se esse mesmo ambiente; não foi certificada a equivalência de execução em todos os sistemas operacionais ou versões locais de Python. Não há arquivo `requirements.txt` ou versão de Pandas fixada no projeto.
+O notebook foi executado no **Google Colab**, com Python e Pandas. A versão atual inclui as saídas dos checkpoints e a validação da exportação do CSV. Para reproduzir os resultados, recomenda-se executar as células em sequência com o arquivo original `Base Varejo.csv`. Não há arquivo `requirements.txt` nem uma versão de Pandas fixada no projeto.
 
 **Reprodução em uma sessão limpa do Google Colab:**
 
@@ -91,7 +91,7 @@ O projeto foi desenvolvido no **Google Colab**, com Python e Pandas. O código f
 
 **Critério de sucesso:** nenhuma célula de código deve apresentar erro, o CSV deve ser criado e a seção de validação do processo deve indicar correspondência de registros, dimensões, colunas e conteúdo entre a base tratada e o CSV relido. Para problemas com a entrada, conferir nome `Base Varejo.csv`, separador `;` e seleção do arquivo durante o upload; a sessão Colab é temporária, portanto o arquivo de saída precisa ser preservado fora dela conforme a necessidade de uso.
 
-Na execução anterior à revisão textual, os resultados registrados no notebook foram:
+Na execução registrada no notebook, os resultados verificados foram:
 
 - base original: **830.000 linhas × 14 colunas**;
 - base tratada: **830.000 linhas × 10 colunas**;
@@ -124,7 +124,7 @@ Não foram identificados:
 
 ### Normalização textual
 
-Na revisão posterior ao feedback da instrutora, foram identificadas **7.320 ocorrências** de `REFRIGERANTE LIMaO` em `PR_NOME`. A normalização com `str.strip().str.upper()` passa a registrar essas ocorrências como `REFRIGERANTE LIMAO`, preservando seus identificadores e registros.
+Na coluna `PR_NOME`, foram identificadas **7.320 ocorrências** de `REFRIGERANTE LIMaO`. A padronização com `str.strip().str.upper()` registra esses valores como `REFRIGERANTE LIMAO`, preservando os identificadores e os registros da base.
 
 ### Marcadores `#N/D`
 
